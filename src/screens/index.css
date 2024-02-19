@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    background-color: aqua;
+    
+    
+}
+.container{
+    height: 350;
+}
+.pic2{
+    /* background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwiki.sportskeeda.com%2Fone-piece%2Fwho-is-gol-d-roger&psig=AOvVaw09QfP44oYxEjwSttwaUMIb&ust=1708083053355000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKiJ_K-frYQDFQAAAAAdAAAAABAD") no-repeat; */
+     background: url("https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/dragon-img_ver_1.jpg") no-repeat;
+    /* background: :url('https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/dragon-img_ver_1.jpg') no-repeat; */
+  display: block;
+  position: relative;
+  /* width: 244px; */
+  /* height: 230px; */
+  background-size: contain;
+}

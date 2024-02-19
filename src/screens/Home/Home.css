@@ -1,0 +1,33 @@
+.carousel-container {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  
+  .sign-out-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+.pic{
+  background: url("https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/dragon-img_ver_1.jpg") no-repeat;
+  display: block;
+  position: relative;
+  /* width: 244px; */
+  /* height: 230px; */
+  background-size: contain;
+}
+.pic2{
+  background: url("https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/dragon-img_ver_1.jpg") no-repeat;
+  display: block;
+  position: relative;
+  /* width: 244px; */
+  /* height: 230px; */
+  background-size: contain;
+}
