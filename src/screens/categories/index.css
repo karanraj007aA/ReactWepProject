@@ -7,7 +7,7 @@
 }
 
 #first {
-  border: 1px black solid;
+  /* border: 1px black solid; */
   width: 30%;
   background-color: rgb(255, 255, 255);
   color: black;
@@ -60,7 +60,7 @@
   #first{
     display:flex;
     flex-direction: row;
-    background-color: aquamarine;
+    
     justify-content: space-around;   
   }
   

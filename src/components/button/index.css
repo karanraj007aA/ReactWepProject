@@ -1,0 +1,11 @@
+.buttonContainer{
+    width: fit-content;
+    align-content: center;
+}
+#para{
+    color: white;
+    border-radius: 30px;
+    /* font-size: 15px; */
+    padding: 8px 8px 8px 8px;
+    background-color: black
+}   

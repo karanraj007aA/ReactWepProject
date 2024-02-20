@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { Breadcrumb } from "react-bootstrap";
 import "../categories/index.css";
+import Icon from "@mui/material/Icon";
+
 const Header = () => {
   const [state, setState] = useState(false);
   useEffect(() => {
@@ -15,24 +18,30 @@ const Header = () => {
     <div className="headerContainer">
       <div id="first" className="menu">
         <p>Home</p>
-        <a onClick={() => setState(!state)}>
-          <p>Menu</p>
-        </a>
+        {innerWidth <= 480 && (
+          <a onClick={() => setState(!state)}>
+            <Icon>menu</Icon>
+          </a>
+        )}
       </div>
-      {state == true && (
+      {innerWidth > 480 && (
         <div id="second">
           <div className="grid-container">
-            <div className="items1">height</div>
-            <div className="items1">width</div>
-            <div className="items1">padding</div>
-            <span className="webIcon">hello</span>
-          </div>
-          <div className="grid-container">
-            <span className="webIcon">hello</span>
-            <div className="items2">width1</div>
-            <span className="webIcon">hello</span>
-            <div className="items2">padding1</div>
-            <div className="items3">element</div>
+            <a
+              className="items1"
+              onClick={() => console.log("this is console")}
+            >
+              <div>height</div>
+            </a>
+            <a className="items1">
+              <div>width</div>
+            </a>
+            <a className="items1">
+              <div>padding</div>
+            </a>
+            <a className="items1">
+              <p>hello</p>
+            </a>
           </div>
         </div>
       )}

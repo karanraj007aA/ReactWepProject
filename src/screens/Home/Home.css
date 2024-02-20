@@ -2,6 +2,7 @@
     width: 100%;
     height: 400px; /* Adjust height as needed */
     overflow: hidden;
+    text-align: center;
   }
   
   .sign-out-btn {
@@ -30,4 +31,25 @@
   /* width: 244px; */
   /* height: 230px; */
   background-size: contain;
+}
+
+.contentDetailsText{
+  
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* background-color: burlywood; */
+  color: #000;
+}
+#buttonID{
+  display:flex;
+  gap: 5;
+  flex-direction: row;
+  width: '100%';
+  /* background-color:palegreen; */
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  
 }

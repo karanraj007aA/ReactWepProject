@@ -9,6 +9,9 @@ import { useSelector } from "react-redux";
 import rootReducer from "../../redux/reducer";
 import store from "../../redux/store";
 import Header from "../categories";
+import "../Home/Home.css";
+import Button from "../../components/button";
+
 // import {}
 
 const Home = () => {
@@ -45,12 +48,12 @@ const Home = () => {
       <div
         style={{
           width: "100vw",
-          height: "100vh",
+          // height: "100vh",
           justifyContent: "center",
           alignItems: "center",
           display: "flex",
           // backgroundColor: "blue",
-          padding: "15%",
+          padding: "2%",
         }}
       >
         <a href={"https://www.google.co.in/"}>
@@ -61,7 +64,19 @@ const Home = () => {
           />
         </a>
       </div>
-      <p>First Look</p>
+      <div className="contentDetails">
+        <p className="contentDetailsText">First Look</p>
+        <h4 className="contentDetailsText">NIKE AIR MAX PULSE</h4>
+        <p className="contentDetailsText">
+          Extreme comfort. Hyper durable. Max volume. Introducing the Air Max
+          Pulse —designed to push you past your limits and help you go to the
+          max.
+        </p>
+      </div>
+      <div id="buttonID">
+        <Button title={"Notify Me"} />
+        <Button title={"Shop Air Max"} />
+      </div>
     </div>
   );
 };
