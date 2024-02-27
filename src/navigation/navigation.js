@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Login from "../screens/login";
+import ProductDetails from "../screens/productDetails";
 import Registration from "../screens/registration";
 
 const Navigation = () => {

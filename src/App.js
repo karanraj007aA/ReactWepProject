@@ -10,6 +10,7 @@ import { auth } from "./firebase/firebase";
 import { setUserId } from "firebase/analytics";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import ProductDetails from "./screens/productDetails";
 
 function App() {
   const navigate = useNavigate();
@@ -46,6 +47,13 @@ function App() {
           path={"/home"}
           name={"Home"}
           element={<Home />}
+        />
+        <Route
+          exact={true}
+          isPublic={true}
+          path={"/productDetails"}
+          name={"ProductDetails"}
+          element={<ProductDetails />}
         />
       </Routes>
     </Provider>

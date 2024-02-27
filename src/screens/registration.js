@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
-import "../screens/index.css";
+// import "../screens/";
 
 function Registration() {
   const [formData, setFormData] = useState({

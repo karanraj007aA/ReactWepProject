@@ -25,7 +25,7 @@
   background-size: contain;
 }
 .pic2{
-  background: url("https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/dragon-img_ver_1.jpg") no-repeat;
+  background-image: url("../../assets/images/image1.png") no-repeat;
   display: block;
   position: relative;
   /* width: 244px; */

@@ -3,9 +3,12 @@ import { useState } from "react";
 import { Breadcrumb } from "react-bootstrap";
 import "../categories/index.css";
 import Icon from "@mui/material/Icon";
+import { auth } from "../../firebase/firebase";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 const Header = () => {
   const [state, setState] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     return () => {
       const innerWidth = window.innerWidth;
@@ -14,6 +17,24 @@ const Header = () => {
       console.log("isMobile: " + isMobile);
     };
   });
+
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    auth
+      .signOut()
+      .then(() => {
+        localStorage.removeItem("user");
+        const userId = localStorage.getItem("user");
+        console.log("user id is ", userId);
+        if (userId == null) {
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        // Handle errors
+      });
+  };
+
   return (
     <div className="headerContainer">
       <div id="first" className="menu">
@@ -39,8 +60,8 @@ const Header = () => {
             <a className="items1">
               <div>padding</div>
             </a>
-            <a className="items1">
-              <p>hello</p>
+            <a className="items1" onClick={handleLogout}>
+              <p>Logout</p>
             </a>
           </div>
         </div>

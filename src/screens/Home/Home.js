@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "../Home/Home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -10,73 +10,63 @@ import rootReducer from "../../redux/reducer";
 import store from "../../redux/store";
 import Header from "../categories";
 import "../Home/Home.css";
-import Button from "../../components/button";
-
+import { Buttons, ProductSlider } from "../../components/button/index";
+import Carausel from "../../components/product-carausel";
+import { Alert } from "react-bootstrap";
 // import {}
 
 const Home = () => {
   const navigate = useNavigate();
-
   const checkLogin = useSelector((state) => state.home.loggedIn);
   console.log("================>", checkLogin);
-
-  const handleLogout = async (e) => {
-    e.preventDefault();
-    auth
-      .signOut()
-      .then(() => {
-        localStorage.removeItem("user");
-        const userId = localStorage.getItem("user");
-        console.log("user id is ", userId);
-        if (userId == null) {
-          navigate("/");
-        }
-      })
-      .catch((error) => {
-        // Handle errors
-      });
+  const [state, setState] = useState({
+    selectedProduct: null,
+  });
+  const handleClick = (item) => {
+    setState((prev) => ({ ...prev, selectedProduct: item }));
+    navigate("/productDetails", { itemId: item.id }); // Redirect to the next screen with item id in the URL
   };
 
   return (
-    <div
-      style={{
-        width: "100vw",
-      }}
-    >
+    <div className="w-screen px-5">
       <Header />
       {/* <ColorSchemesExample onClick={handleLogout} /> */}
-      <div
-        style={{
-          width: "100vw",
-          // height: "100vh",
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-          // backgroundColor: "blue",
-          padding: "2%",
-        }}
-      >
+      <div className="w-screen items-center justify-center px-5">
         <a href={"https://www.google.co.in/"}>
           <img
-            src={require("../../assets/images/nike.png")}
-            width="100%"
+            src={require("../../assets/images/eyes.jpg")}
+            className="w-screen"
             alt="shoe image"
           />
         </a>
       </div>
-      <div className="contentDetails">
-        <p className="contentDetailsText">First Look</p>
-        <h4 className="contentDetailsText">NIKE AIR MAX PULSE</h4>
-        <p className="contentDetailsText">
+      <div className="">
+        <p className="font-semibold text-xl hover:text-indigo-500 text-center">
+          First Look
+        </p>
+        <h4 className="text-l hover:text-indigo-500 text-center mt-1 ">
+          NIKE AIR MAX PULSE
+        </h4>
+        <div className="text-wrap text-base text-center items-center mt-3 ">
           Extreme comfort. Hyper durable. Max volume. Introducing the Air Max
           Pulse —designed to push you past your limits and help you go to the
           max.
-        </p>
+        </div>
       </div>
-      <div id="buttonID">
-        <Button title={"Notify Me"} />
-        <Button title={"Shop Air Max"} />
+      <div className="mt-3 flex items-center justify-center gap-4">
+        <Buttons title={"Notify Me"} />
+        <Buttons title={"Shop Air Max"} />
       </div>
+      <div className="  mx-5">
+        <div className="flex items-center justify-between">
+          <p className="text-lg font-medium">Best of Air Max</p>
+          <ProductSlider
+            prevItem={() => console.log("this is prev")}
+            title={"Shop"}
+          />
+        </div>
+      </div>
+      <Carausel handleClick={handleClick} />
     </div>
   );
 };
